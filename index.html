@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Web Dashboard System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-light">
+  <div id="toast" class="toast hidden"></div>
+
+  <main id="auth-screen" class="screen centered-screen">
+    <div class="auth-box" id="auth-box">
+      <h1 id="auth-title">Login</h1>
+
+      <form id="auth-form" class="auth-form">
+        <label>Email</label>
+        <input type="email" id="email" required />
+        <label>Password</label>
+        <input type="password" id="password" required />
+        <button type="submit" class="btn btn-primary" id="auth-submit">Login</button>
+      </form>
+
+      <div class="auth-switch" id="auth-switch">
+        <span id="switch-text">Don’t have an account?</span>
+        <button id="switch-btn" class="btn btn-link">Sign Up</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">Modern Dashboard</div>
+      <nav>
+        <a href="#dashboard" class="nav-link" data-screen="dashboard">Dashboard</a>
+        <a href="#filemgmt" class="nav-link" data-screen="filemgmt">Files</a>
+        <a href="#reports" class="nav-link" data-screen="reports">Reports</a>
+        <a href="#admin" class="nav-link" data-screen="admin">Admin</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="dark-mode-toggle" class="btn btn-secondary">🌙 Dark Mode</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <div class="page-title" id="page-title">Dashboard</div>
+        <div class="user-actions">
+          <span id="profile-info">User</span>
+          <button id="logout-btn" class="btn btn-secondary">Logout</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="panel">
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Total Files</h3>
+            <p id="total-files">0</p>
+          </article>
+          <article class="card">
+            <h3>Total Users</h3>
+            <p id="total-users">0</p>
+          </article>
+          <article class="card">
+            <h3>Recent Activity</h3>
+            <p id="total-activity">0</p>
+          </article>
+        </div>
+
+        <section class="panel-block">
+          <h2>Recent Activity</h2>
+          <ul id="activity-list" class="activity-list"></ul>
+        </section>
+      </section>
+
+      <section id="filemgmt" class="panel hidden">
+        <div class="panel-actions">
+          <input id="file-search" type="text" placeholder="Search files..." />
+          <button id="new-file-btn" class="btn btn-primary">Add File</button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Name</th><th>Type</th><th>Date</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="files-table"></tbody>
+        </table>
+      </section>
+
+      <section id="reports" class="panel hidden">
+        <div class="panel-actions">
+          <label>From <input type="date" id="report-from" /></label>
+          <label>To <input type="date" id="report-to" /></label>
+          <button id="generate-report-btn" class="btn btn-primary">Generate</button>
+        </div>
+
+        <div class="report-cards">
+          <div class="card"><h3>Generated</h3><p id="report-generated">0</p></div>
+          <div class="card"><h3>Filtered Files</h3><p id="report-files">0</p></div>
+        </div>
+
+        <div id="reports-chart" class="chart-placeholder">Chart placeholder (simple bars)</div>
+        <div class="report-table-wrap">
+          <table class="data-table"><thead><tr><th>Date</th><th>Activity</th><th>User</th></tr></thead><tbody id="reports-table"></tbody></table>
+        </div>
+      </section>
+
+      <section id="admin" class="panel hidden">
+        <h2>User Management</h2>
+        <table class="data-table">
+          <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr></thead>
+          <tbody id="users-table"></tbody>
+        </table>
+      </section>
+    </section>
+  </div>
+
+  <div id="file-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="file-modal-title">Add File</h3>
+      <form id="file-form">
+        <label>File Name <input type="text" id="file-name" required /></label>
+        <label>Type <input type="text" id="file-type" required placeholder="document/image/video" /></label>
+        <div class="modal-actions">
+          <button type="button" id="file-cancel" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
