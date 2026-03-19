@@ -2,7 +2,7 @@
 LGU Dashboard System
 
 ## 🌐 Live Demo
-https://your-live-link.com
+
 
 ## 📌 Description
 This project is a responsive web application designed to provide a modern admin dashboard experience for local government unit (LGU) style workflows, including user authentication, file management, reporting, and admin user controls.
@@ -43,5 +43,5 @@ Mark J
 3. Register new user and test workflows.
 
 ## Deployment
-- Host via GitHub Pages, Netlify, or Vercel.
+- Host via GitHub Pages
 - Ensure `index.html`, `styles.css`, `app.js` are in project root.
