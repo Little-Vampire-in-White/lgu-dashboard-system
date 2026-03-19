@@ -2,7 +2,7 @@
 LGU Dashboard System
 
 ## 🌐 Live Demo
-
+https://little-vampire-in-white.github.io/lgu-dashboard-system/
 
 ## 📌 Description
 This project is a responsive web application designed to provide a modern admin dashboard experience for local government unit (LGU) style workflows, including user authentication, file management, reporting, and admin user controls.
@@ -27,7 +27,7 @@ This project is a responsive web application designed to provide a modern admin 
 (Add screenshots here)
 
 ## 👨‍💻 Author
-Mark J
+Neko Josh
 
 ## Pages
 - Login Page
